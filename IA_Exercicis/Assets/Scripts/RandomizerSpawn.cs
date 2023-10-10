@@ -5,24 +5,28 @@ using UnityEngine;
 public class RandomizerSpawn : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float Radius = 1;
-    public Transform ItemPrefab;
+    public seek prefab;
 
-    void Start()
+    public float minRange;
+    public float maxRange;
+
+    public bool RandomRange = false;
+
+    private void Start()
     {
-        SpawnObjectRandom();
+        InstantiateObject();
     }
 
-    // Update is called once per frame
-    void Update()
+    void InstantiateObject()
     {
-        
-    }
-
-    void SpawnObjectRandom()
-    {
-        Vector3 randomPos = Random.insideUnitCircle * Radius;
-        randomPos = ItemPrefab.transform.position;
-        //Instantiate(ItemPrefab, randomPos, Quaternion.identity);
+        if (RandomRange == true) {
+            Vector3 randomSpawnPosition = new Vector3(Random.Range(-10, 11), 1, Random.Range(-10, 11));
+            Instantiate(prefab, randomSpawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Vector3 randomSpawnPosition = new Vector3(Random.Range(-minRange, maxRange), 1, Random.Range(-minRange, maxRange));
+            Instantiate(prefab, randomSpawnPosition, Quaternion.identity);
+        }
     }
 }
