@@ -61,11 +61,14 @@
     <Compile Include="Assets\Scripts\FlockUnit.cs" />
     <Compile Include="Assets\Scripts\Wandering.cs" />
     <Compile Include="Assets\Scripts\Patrolling.cs" />
+    <Compile Include="Assets\Scripts\FieldOfViewEditor.cs" />
+    <Compile Include="Assets\Scripts\ZombieController.cs" />
     <Compile Include="Assets\Scripts\RandomSpawn.cs" />
+    <Compile Include="Assets\Scripts\Zombie.cs" />
     <Compile Include="Assets\Scripts\seek.cs" />
     <Compile Include="Assets\Scripts\SeekAcc.cs" />
-    <Compile Include="Assets\Scripts\RandomizerSpawn.cs" />
     <Compile Include="Assets\Scripts\Flock.cs" />
+    <Compile Include="Assets\Scripts\AIVision.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
