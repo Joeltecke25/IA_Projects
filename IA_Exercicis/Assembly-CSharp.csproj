@@ -58,17 +58,22 @@
     <Analyzer Include="D:\Unity\2022.3.3f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\FlockUnit.cs" />
-    <Compile Include="Assets\Scripts\Wandering.cs" />
-    <Compile Include="Assets\Scripts\Patrolling.cs" />
-    <Compile Include="Assets\Scripts\FieldOfViewEditor.cs" />
-    <Compile Include="Assets\Scripts\ZombieController.cs" />
-    <Compile Include="Assets\Scripts\RandomSpawn.cs" />
-    <Compile Include="Assets\Scripts\Zombie.cs" />
-    <Compile Include="Assets\Scripts\seek.cs" />
-    <Compile Include="Assets\Scripts\SeekAcc.cs" />
-    <Compile Include="Assets\Scripts\Flock.cs" />
-    <Compile Include="Assets\Scripts\AIVision.cs" />
+    <Compile Include="Assets\Scripts\seek\SeekAcc.cs" />
+    <Compile Include="Assets\Scripts\Zombies\ZombieController.cs" />
+    <Compile Include="Assets\Scripts\AnimationController.cs" />
+    <Compile Include="Assets\Scripts\Flocking\FlockUnit.cs" />
+    <Compile Include="Assets\Scripts\Zombies\AIVision.cs" />
+    <Compile Include="Assets\Scripts\Wandering\Wandering.cs" />
+    <Compile Include="Assets\Scripts\Flocking\Flock.cs" />
+    <Compile Include="Assets\Scripts\seek\seek.cs" />
+    <Compile Include="Assets\Scripts\Zombies\FieldOfViewEditor.cs" />
+    <Compile Include="Assets\Scripts\FSM.cs" />
+    <Compile Include="Assets\Scripts\Moves.cs" />
+    <Compile Include="Assets\Scripts\FSMCop.cs" />
+    <Compile Include="Assets\Scripts\PoliceVision.cs" />
+    <Compile Include="Assets\Scripts\Wandering\Patrolling.cs" />
+    <Compile Include="Assets\Scripts\Wandering\RandomSpawn.cs" />
+    <Compile Include="Assets\Scripts\Zombies\Zombie.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
