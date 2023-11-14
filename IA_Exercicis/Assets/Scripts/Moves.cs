@@ -61,36 +61,30 @@ public class Moves : MonoBehaviour
 
 
     Vector3 wanderTarget = Vector3.zero;
+    internal Vector3 hideValue;
+
     public void Wander()
     {
-        //float wanderRadius = 10;
-        //float wanderDistance = 10;
-        //float wanderJitter = 1;
+        float wanderRadius = 10;
+        float wanderDistance = 10;
+        float wanderJitter = 1;
 
-        //wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
-        //                                0,
-        //                                Random.Range(-1.0f, 1.0f) * wanderJitter);
-        //wanderTarget.Normalize();
-        //wanderTarget *= wanderRadius;
+        wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
+                                        0,
+                                        Random.Range(-1.0f, 1.0f) * wanderJitter);
+        wanderTarget.Normalize();
+        wanderTarget *= wanderRadius;
 
-        //Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
-        //Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
+        Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
+        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
 
-        //if (!floor.bounds.Contains(targetWorld))
-        //{
-        //    targetWorld = -transform.position * 0.1f;
+        if (!floor.bounds.Contains(targetWorld))
+        {
+            targetWorld = -transform.position * 0.1f;
 
-        //};
+        };
 
-        //Seek(targetWorld);
-
-         if (agent.remainingDistance <= agent.stoppingDistance)
-         {
-            Vector3 point = transform.position + new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f));
-
-            Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); 
-            agent.SetDestination(point);
-         }
+        Seek(targetWorld);
     }
 
     public void Hide()
@@ -103,7 +97,7 @@ public class Moves : MonoBehaviour
         for (int i = 0; i < hidingSpots.Length; i++)
         {
             Vector3 hideDir = hidingSpots[i].transform.position - target.transform.position;
-            Vector3 hidePos = hidingSpots[i].transform.position + hideDir.normalized * 20; //Distance edited acording to map
+            Vector3 hidePos = hidingSpots[i].transform.position + hideDir.normalized * 100;
 
             if (Vector3.Distance(target.transform.position, hidePos) < dist)
             {
@@ -120,6 +114,7 @@ public class Moves : MonoBehaviour
         float distance = 250.0f;
         hideCol.Raycast(backRay, out info, distance);
 
+        hideValue = info.point + chosenDir.normalized;
 
         Seek(info.point + chosenDir.normalized);
 
