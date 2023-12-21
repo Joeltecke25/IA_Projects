@@ -50,6 +50,7 @@ public class PoliceVision : MonoBehaviour
                     if (police.Stolen)
                     {
                         Debug.Log("I see the Thief!");
+                        
                     }
                     else
                     {

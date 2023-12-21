@@ -57,7 +57,7 @@ public class Flock : MonoBehaviour
     public float aligementWeight { get { return _aligementWeight; } }
 
     [Range(0, 10)]
-    public   float _boundsWeight;
+    public float _boundsWeight;
     public float boundsWeight { get { return _boundsWeight; } }
 
     [Range(0, 100)]

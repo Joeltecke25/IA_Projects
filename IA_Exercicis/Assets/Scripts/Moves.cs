@@ -65,26 +65,34 @@ public class Moves : MonoBehaviour
 
     public void Wander()
     {
-        float wanderRadius = 10;
-        float wanderDistance = 10;
-        float wanderJitter = 1;
+        //float wanderRadius = 10;
+        //float wanderDistance = 10;
+        //float wanderJitter = 5;
 
-        wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
-                                        0,
-                                        Random.Range(-1.0f, 1.0f) * wanderJitter);
-        wanderTarget.Normalize();
-        wanderTarget *= wanderRadius;
+        //wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
+        //                                0,
+        //                                Random.Range(-1.0f, 1.0f) * wanderJitter);
+        //wanderTarget.Normalize();
+        //wanderTarget *= wanderRadius;
 
-        Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
-        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
+        //Vector3 targetLocal = wanderTarget + new Vector3(wanderDistance, 0, wanderDistance);
+        //Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
 
-        if (!floor.bounds.Contains(targetWorld))
+        //if (!floor.bounds.Contains(targetWorld))
+        //{
+        //    targetWorld = -transform.position * 0.1f;
+
+        //};
+
+        //Seek(targetWorld);
+
+        if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            targetWorld = -transform.position * 0.1f;
+            Vector3 point = transform.position + new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
 
-        };
-
-        Seek(targetWorld);
+            Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
+            agent.SetDestination(point);
+        }
     }
 
     public void Hide()

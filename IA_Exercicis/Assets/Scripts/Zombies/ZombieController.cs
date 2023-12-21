@@ -9,12 +9,13 @@ public class ZombieController : MonoBehaviour
 
     private List<AIVision> zombies = new List<AIVision>();
     public static bool playerDetected = false;
+    public int range = 5;
 
     void Start()
     {
         for (int i = 0; i < numberOfZombies; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(-5, 5), 0.5f, Random.Range(-5, 5));
+            Vector3 randomPosition = new Vector3(Random.Range(-range, range), 0.5f, Random.Range(-range, range));
             AIVision newZombie = Instantiate(zombiePrefab, randomPosition, Quaternion.identity);
             zombies.Add(newZombie);
         }

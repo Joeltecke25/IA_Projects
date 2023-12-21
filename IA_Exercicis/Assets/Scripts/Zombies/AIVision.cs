@@ -58,7 +58,7 @@ public class AIVision : MonoBehaviour
     private void Chase()
     {
         if (ZombieController.playerTransform != null)
-            agent.SetDestination(ZombieController.playerTransform.position);
+            agent.SetDestination(playerRef.transform.position);
         
     }
     private void SetRandomDestination()
