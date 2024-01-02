@@ -92,52 +92,52 @@ MonoBehaviour:
     id=\"7\" />\r\n          <SequenceNode id=\"8\" />\r\n          <ActionNode id=\"9\"
     />\r\n          <ActionNode id=\"10\" />\r\n        </nodes>\r\n      </_nodes>\r\n   
     </BehaviorTree>\r\n    <SequenceNode id=\"1\">\r\n      <_data>\r\n        <data
-    breakpoint=\"0\" selected=\"False\" position=\"408.2325 178.5976\" name=\"Sequence\"
+    breakpoint=\"0\" selected=\"False\" position=\"718.3973 -55.4024\" name=\"Sequence\"
     description=\"Executes all its children in sequence until all of them are successful\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ParallelNode id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"261.2327 298.5979\" name=\"Parallel\" description=\"Executes all its
+    position=\"571.3975 64.5979\" name=\"Parallel\" description=\"Executes all its
     children in parallel until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ParallelNode id=\"2\" />\r\n         
     <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </ParallelNode>\r\n   
     <ActionNode id=\"3\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"471.2324 332.5979\" name=\"GameObject/SetActive\" description=\"Activates
+    position=\"781.3972 98.5979\" name=\"GameObject/SetActive\" description=\"Activates
     or deactivates the game object\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"3\" />\r\n          <SequenceNode
     id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <RepeatDecorator id=\"4\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"681.1079 276.281\" name=\"Repeat\" description=\"Repeats
+    selected=\"False\" position=\"991.2727 42.28101\" name=\"Repeat\" description=\"Repeats
     the execution of its child node\" cardinality=\"1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"4\" />\r\n         
     <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n   
     <RepeatUntilSuccess id=\"5\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"63.58448 430.0907\" name=\"Repeat Until Success\"
+    selected=\"False\" position=\"373.7491 196.0907\" name=\"Repeat Until Success\"
     description=\"Repeats the execution of its child node until it success\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <RepeatUntilSuccess
     id=\"5\" />\r\n          <ParallelNode id=\"2\" />\r\n        </data>\r\n     
     </_data>\r\n    </RepeatUntilSuccess>\r\n    <SubbehaviorNode id=\"7\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"361.5845
-    443.8048\" name=\"toSteal\" description=\"\" cardinality=\"-1\" hasParent=\"True\">\r\n         
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"671.7493
+    209.8048\" name=\"toSteal\" description=\"\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode id=\"7\" />\r\n         
     <ParallelNode id=\"2\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <SequenceNode id=\"8\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"686.0056 403.4495\" name=\"Sequence\" description=\"Executes all its
+    position=\"996.1704 169.4495\" name=\"Sequence\" description=\"Executes all its
     children in sequence until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"8\" />\r\n         
     <RepeatDecorator id=\"4\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ConditionNode id=\"6\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"100.489 574.6144\" name=\"Perception/IsTargetClose\" description=\"Checks
+    position=\"410.6537 340.6144\" name=\"Perception/IsTargetClose\" description=\"Checks
     whether a target is close depending on a given distance\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ConditionNode id=\"6\" />\r\n         
     <RepeatUntilSuccess id=\"5\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionNode>\r\n   
     <ActionNode id=\"10\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
-    position=\"618.185 550.2665\" name=\"MyActions/Hide\" description=\"Get the Vector3
-    for hiding.\" cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree
+    position=\"928.3497 316.2665\" name=\"MyActions/Hide\" description=\"Get the
+    Vector3 for hiding.\" cardinality=\"0\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"10\" />\r\n          <SequenceNode
     id=\"8\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ActionNode id=\"9\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"770.3391 545.1162\" name=\"Navigation/MoveToPosition\" description=\"Moves
+    position=\"1080.504 311.1162\" name=\"Navigation/MoveToPosition\" description=\"Moves
     the game object to a given position by using a NavMeshAgent\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"9\" />\r\n          <SequenceNode id=\"8\" />\r\n        </data>\r\n     
@@ -146,7 +146,7 @@ MonoBehaviour:
     description=\"Eval\" cardinality=\"1\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n 
     </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.5
+  zoom: 0.8
   subslist:
   - {fileID: 11400000, guid: 34db538be70181d4b90a9a0f5f6f7286, type: 2}
   _guid: e57f204e0d0c17547aaa4cb3515debb6

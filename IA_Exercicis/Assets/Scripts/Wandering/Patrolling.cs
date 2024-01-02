@@ -10,6 +10,7 @@ public class Patrolling : MonoBehaviour
     NavMeshAgent agent;
     public Transform[] waypoints;
     private Animator animator;
+
     int waypointIndex;
     Vector3 target;
     void Start()

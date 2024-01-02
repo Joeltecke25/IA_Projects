@@ -96,6 +96,7 @@
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\SetVelocity.cs" />
     <Compile Include="Assets\Scripts\Zombies\AIVision.cs" />
+    <Compile Include="Assets\Scripts\seek\SeekMoves.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetVector3.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckBool.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Other\Scripts\Underwater.cs" />
+    <Compile Include="Assets\Scripts\Zombies\ZombieManager.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\FindGameObjectByName.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Animation\PlayAnimation.cs" />
     <Compile Include="Assets\#NVJOB Boids\Simple Boids\NVBoids.cs" />

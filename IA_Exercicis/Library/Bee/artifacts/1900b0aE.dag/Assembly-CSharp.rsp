@@ -464,6 +464,7 @@
 "Assets/Scripts/PoliceVision.cs"
 "Assets/Scripts/seek/seek.cs"
 "Assets/Scripts/seek/SeekAcc.cs"
+"Assets/Scripts/seek/SeekMoves.cs"
 "Assets/Scripts/Wandering/Patrolling.cs"
 "Assets/Scripts/Wandering/RandomSpawn.cs"
 "Assets/Scripts/Wandering/Wandering.cs"
@@ -471,6 +472,7 @@
 "Assets/Scripts/Zombies/FieldOfViewEditor.cs"
 "Assets/Scripts/Zombies/Zombie.cs"
 "Assets/Scripts/Zombies/ZombieController.cs"
+"Assets/Scripts/Zombies/ZombieManager.cs"
 -langversion:9.0
 
 /deterministic
