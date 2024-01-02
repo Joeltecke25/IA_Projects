@@ -4,17 +4,17 @@ using UnityEngine.AI;
 public class AIVision : MonoBehaviour
 {
     public Camera frustum;
-    public LayerMask mask;
-
     public float radius;
 
     public GameObject playerRef;
     public NavMeshAgent agent;
+    private Animator animator;
 
     private Vector3 destinoAleatorio;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         BroadcastMessage("Chase");
@@ -23,38 +23,29 @@ public class AIVision : MonoBehaviour
 
     public void Vision()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, frustum.farClipPlane, mask);
-        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(frustum);
+        Vector3 raycastOrigin = frustum.transform.position;
+        float maxDistance = 30;
+        float fovRad = frustum.fieldOfView * Mathf.Deg2Rad;
 
-        foreach (Collider col in colliders)
+        for (float angle = -fovRad / 2; angle <= fovRad / 2; angle += 0.1f)
         {
-            if (col.gameObject != gameObject && GeometryUtility.TestPlanesAABB(planes, col.bounds))
-            {
-                RaycastHit hit;
-                Ray ray = new Ray();
-                ray.origin = transform.position;
-                ray.direction = (col.transform.position - transform.position).normalized;
-                ray.origin = ray.GetPoint(frustum.nearClipPlane);
+            Vector3 raycastDirection = frustum.transform.forward;
+            raycastDirection = Quaternion.Euler(0, angle * Mathf.Rad2Deg, 0) * raycastDirection;
 
-                if (Physics.Raycast(ray, out hit, frustum.farClipPlane, mask))
-                    if (hit.collider.gameObject.CompareTag("Player"))
-                    {
-                        Debug.Log("I have seen you!!");
-                        ZombieController.playerDetected = true;
-                        ZombieController.playerTransform = hit.collider.transform;
-                    }
-                    else
-                    {
-                        ZombieController.playerDetected = false;
-                    }
-            }
-            else
+            RaycastHit hit;
+            if (Physics.Raycast(raycastOrigin, raycastDirection, out hit, maxDistance))
             {
-                ZombieController.playerDetected = false;
+                Debug.DrawRay(raycastOrigin, raycastDirection * maxDistance, Color.red);
+
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.DrawRay(raycastOrigin, raycastDirection * maxDistance, Color.green);
+                    Chase();
+                }
             }
         }
     }
- 
+
     private void Chase()
     {
         if (ZombieController.playerTransform != null)
@@ -63,6 +54,7 @@ public class AIVision : MonoBehaviour
     }
     private void SetRandomDestination()
     {
+        animator.SetFloat("Speed", agent.speed);
         {
             Vector3 posicionAleatoria = UnityEngine.Random.insideUnitSphere * radius;
             posicionAleatoria += transform.position;
